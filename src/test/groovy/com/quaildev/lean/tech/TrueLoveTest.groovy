@@ -11,7 +11,7 @@ class TrueLoveTest extends Specification {
         trueLove.dayOfChristmas = day
 
         expect:
-        trueLove.hasGivenToMe().size() == 0
+        trueLove.hasGivenToMe().isEmpty()
 
         where:
         day << [Integer.MIN_VALUE, -1, 0, 13, Integer.MAX_VALUE]
