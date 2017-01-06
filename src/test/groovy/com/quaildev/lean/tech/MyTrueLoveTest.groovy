@@ -2,37 +2,40 @@ package com.quaildev.lean.tech
 
 import spock.lang.Specification
 
-class TrueLoveTest extends Specification {
+import static java.lang.Integer.MAX_VALUE
+import static java.lang.Integer.MIN_VALUE
 
-    def trueLove = new TrueLove()
+class MyTrueLoveTest extends Specification {
+
+    def myTrueLove = new MyTrueLove()
 
     def "my true love only gives presents during the twelve days of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = day
+        myTrueLove.onDay day
 
         expect:
-        trueLove.hasGivenToMe().isEmpty()
+        myTrueLove.hasGivenToMe().isEmpty()
 
         where:
-        day << [Integer.MIN_VALUE, -1, 0, 13, Integer.MAX_VALUE]
+        day << [MIN_VALUE, -1, 0, 13, MAX_VALUE]
     }
 
     def "on the first day of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = 1
+        myTrueLove.onDay 1
 
         expect:
-        trueLove.hasGivenToMe() == [
+        myTrueLove.hasGivenToMe() == [
                 '1 partridge in a pear tree'
         ]
     }
 
     def "on the second day of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = 2
+        myTrueLove.onDay 2
 
         expect:
-        trueLove.hasGivenToMe() == [
+        myTrueLove.hasGivenToMe() == [
                 "2 partridges in a pear tree",
                 "2 turtle doves"
         ]
@@ -40,10 +43,10 @@ class TrueLoveTest extends Specification {
 
     def "on the third day of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = 3
+        myTrueLove.onDay 3
 
         expect:
-        trueLove.hasGivenToMe() == [
+        myTrueLove.hasGivenToMe() == [
                 "3 partridges in a pear tree",
                 "4 turtle doves",
                 "3 French hens"
@@ -52,10 +55,10 @@ class TrueLoveTest extends Specification {
 
     def "on the fourth day of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = 4
+        myTrueLove.onDay 4
 
         expect:
-        trueLove.hasGivenToMe() == [
+        myTrueLove.hasGivenToMe() == [
                 "4 partridges in a pear tree",
                 "6 turtle doves",
                 "6 French hens",
@@ -65,10 +68,10 @@ class TrueLoveTest extends Specification {
 
     def "on the fifth day of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = 5
+        myTrueLove.onDay 5
 
         expect:
-        trueLove.hasGivenToMe() == [
+        myTrueLove.hasGivenToMe() == [
                 "5 partridges in a pear tree",
                 "8 turtle doves",
                 "9 French hens",
@@ -79,10 +82,10 @@ class TrueLoveTest extends Specification {
 
     def "on the sixth day of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = 6
+        myTrueLove.onDay 6
 
         expect:
-        trueLove.hasGivenToMe() == [
+        myTrueLove.hasGivenToMe() == [
                 "6 partridges in a pear tree",
                 "10 turtle doves",
                 "12 French hens",
@@ -94,10 +97,10 @@ class TrueLoveTest extends Specification {
 
     def "on the seventh day of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = 7
+        myTrueLove.onDay 7
 
         expect:
-        trueLove.hasGivenToMe() == [
+        myTrueLove.hasGivenToMe() == [
                 "7 partridges in a pear tree",
                 "12 turtle doves",
                 "15 French hens",
@@ -110,10 +113,10 @@ class TrueLoveTest extends Specification {
 
     def "on the eighth day of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = 8
+        myTrueLove.onDay 8
 
         expect:
-        trueLove.hasGivenToMe() == [
+        myTrueLove.hasGivenToMe() == [
                 "8 partridges in a pear tree",
                 "14 turtle doves",
                 "18 French hens",
@@ -127,10 +130,10 @@ class TrueLoveTest extends Specification {
 
     def "on the ninth day of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = 9
+        myTrueLove.onDay 9
 
         expect:
-        trueLove.hasGivenToMe() == [
+        myTrueLove.hasGivenToMe() == [
                 "9 partridges in a pear tree",
                 "16 turtle doves",
                 "21 French hens",
@@ -145,10 +148,10 @@ class TrueLoveTest extends Specification {
 
     def "on the tenth day of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = 10
+        myTrueLove.onDay 10
 
         expect:
-        trueLove.hasGivenToMe() == [
+        myTrueLove.hasGivenToMe() == [
                 "10 partridges in a pear tree",
                 "18 turtle doves",
                 "24 French hens",
@@ -164,10 +167,10 @@ class TrueLoveTest extends Specification {
 
     def "on the eleventh day of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = 11
+        myTrueLove.onDay 11
 
         expect:
-        trueLove.hasGivenToMe() == [
+        myTrueLove.hasGivenToMe() == [
                 "11 partridges in a pear tree",
                 "20 turtle doves",
                 "27 French hens",
@@ -184,10 +187,10 @@ class TrueLoveTest extends Specification {
 
     def "on the twelfth day of Christmas"() {
         setup:
-        trueLove.dayOfChristmas = 12
+        myTrueLove.onDay 12
 
         expect:
-        trueLove.hasGivenToMe() == [
+        myTrueLove.hasGivenToMe() == [
                 "12 partridges in a pear tree",
                 "22 turtle doves",
                 "30 French hens",

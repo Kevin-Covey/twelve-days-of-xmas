@@ -1,8 +1,8 @@
 package com.quaildev.lean.tech
 
-class TrueLove {
+class MyTrueLove {
 
-    private static final List<Gift> gifts = [
+    private static final List<Gift> GIFTS = [
             new Gift(1, "partridge in a pear tree"),
             new Gift(2, "turtle doves"),
             new Gift(3, "French hens"),
@@ -19,17 +19,29 @@ class TrueLove {
 
     int dayOfChristmas
 
+    void onDay(int day) {
+        this.dayOfChristmas = day
+    }
+
     List<String> hasGivenToMe() {
-        if (!(1..12).contains(dayOfChristmas)) return []
-        return gifts
-                .collect { new Gift((dayOfChristmas - gifts.indexOf(it)) * it.quantity, it.description) }
-                .findAll { it.quantity > 0 }
-                .collect { "$it" }
+        if (isOneOfTheDaysOfChristmas()) {
+            GIFTS.collect { it * numberOfDaysGiven(it) }.findAll { it.quantity > 0 }.collect { "$it" }
+        } else {
+            []
+        }
+    }
+
+    private boolean isOneOfTheDaysOfChristmas() {
+        (1..12).contains(dayOfChristmas)
+    }
+
+    private int numberOfDaysGiven(Gift giftGiven) {
+        dayOfChristmas - GIFTS.indexOf(giftGiven)
     }
 
     @Override
     String toString() {
-        "Day of Christmas: $dayOfChristmas"
+        "My true love on day $dayOfChristmas"
     }
 }
 
@@ -42,6 +54,10 @@ class Gift {
         this.description = description
     }
 
+    Gift multiply(int numberOfDaysGiven) {
+        new Gift(quantity * numberOfDaysGiven, description)
+    }
+
     @Override
     boolean equals(Object other) {
         description == other.description
@@ -50,7 +66,7 @@ class Gift {
     @Override
     String toString() {
         def asString = "$quantity $description"
-        return hasManyPartridges() ? asString.replace("partridge", "partridges") : asString
+        hasManyPartridges() ? asString.replace("partridge", "partridges") : asString
     }
 
     private boolean hasManyPartridges() {
