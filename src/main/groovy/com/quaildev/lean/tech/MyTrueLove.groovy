@@ -3,7 +3,7 @@ package com.quaildev.lean.tech
 class MyTrueLove {
 
     private static final List<Gift> GIFTS = [
-            new Gift(1, "partridge in a pear tree"),
+            new Gift(1, "partridges in a pear tree"),
             new Gift(2, "turtle doves"),
             new Gift(3, "French hens"),
             new Gift(4, "calling birds"),
@@ -42,34 +42,5 @@ class MyTrueLove {
     @Override
     String toString() {
         "My true love on day $dayOfChristmas"
-    }
-}
-
-class Gift {
-    int quantity
-    String description
-
-    Gift(int quantity, String description) {
-        this.quantity = quantity
-        this.description = description
-    }
-
-    Gift multiply(int numberOfDaysGiven) {
-        new Gift(quantity * numberOfDaysGiven, description)
-    }
-
-    @Override
-    boolean equals(Object other) {
-        description == other.description
-    }
-
-    @Override
-    String toString() {
-        def asString = "$quantity $description"
-        hasManyPartridges() ? asString.replace("partridge", "partridges") : asString
-    }
-
-    private boolean hasManyPartridges() {
-        description.contains("partridge") && quantity > 1
     }
 }

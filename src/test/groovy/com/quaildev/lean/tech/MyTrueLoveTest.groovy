@@ -9,7 +9,7 @@ class MyTrueLoveTest extends Specification {
 
     def myTrueLove = new MyTrueLove()
 
-    def "my true love only gives presents during the twelve days of Christmas"() {
+    def 'my true love only gives presents during the twelve days of Christmas'() {
         setup:
         myTrueLove.onDay day
 
@@ -20,7 +20,7 @@ class MyTrueLoveTest extends Specification {
         day << [MIN_VALUE, -1, 0, 13, MAX_VALUE]
     }
 
-    def "on the first day of Christmas"() {
+    def 'on the first day of Christmas'() {
         setup:
         myTrueLove.onDay 1
 
@@ -30,7 +30,7 @@ class MyTrueLoveTest extends Specification {
         ]
     }
 
-    def "on the second day of Christmas"() {
+    def 'on the second day of Christmas'() {
         setup:
         myTrueLove.onDay 2
 
@@ -41,7 +41,7 @@ class MyTrueLoveTest extends Specification {
         ]
     }
 
-    def "on the third day of Christmas"() {
+    def 'on the third day of Christmas'() {
         setup:
         myTrueLove.onDay 3
 
@@ -53,7 +53,7 @@ class MyTrueLoveTest extends Specification {
         ]
     }
 
-    def "on the fourth day of Christmas"() {
+    def 'on the fourth day of Christmas'() {
         setup:
         myTrueLove.onDay 4
 
@@ -66,7 +66,7 @@ class MyTrueLoveTest extends Specification {
         ]
     }
 
-    def "on the fifth day of Christmas"() {
+    def 'on the fifth day of Christmas'() {
         setup:
         myTrueLove.onDay 5
 
@@ -80,7 +80,7 @@ class MyTrueLoveTest extends Specification {
         ]
     }
 
-    def "on the sixth day of Christmas"() {
+    def 'on the sixth day of Christmas'() {
         setup:
         myTrueLove.onDay 6
 
@@ -95,7 +95,7 @@ class MyTrueLoveTest extends Specification {
         ]
     }
 
-    def "on the seventh day of Christmas"() {
+    def 'on the seventh day of Christmas'() {
         setup:
         myTrueLove.onDay 7
 
@@ -111,7 +111,7 @@ class MyTrueLoveTest extends Specification {
         ]
     }
 
-    def "on the eighth day of Christmas"() {
+    def 'on the eighth day of Christmas'() {
         setup:
         myTrueLove.onDay 8
 
@@ -128,7 +128,7 @@ class MyTrueLoveTest extends Specification {
         ]
     }
 
-    def "on the ninth day of Christmas"() {
+    def 'on the ninth day of Christmas'() {
         setup:
         myTrueLove.onDay 9
 
@@ -146,7 +146,7 @@ class MyTrueLoveTest extends Specification {
         ]
     }
 
-    def "on the tenth day of Christmas"() {
+    def 'on the tenth day of Christmas'() {
         setup:
         myTrueLove.onDay 10
 
@@ -165,7 +165,7 @@ class MyTrueLoveTest extends Specification {
         ]
     }
 
-    def "on the eleventh day of Christmas"() {
+    def 'on the eleventh day of Christmas'() {
         setup:
         myTrueLove.onDay 11
 
@@ -185,7 +185,7 @@ class MyTrueLoveTest extends Specification {
         ]
     }
 
-    def "on the twelfth day of Christmas"() {
+    def 'on the twelfth day of Christmas'() {
         setup:
         myTrueLove.onDay 12
 
